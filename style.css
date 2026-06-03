@@ -1,0 +1,81 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f2f2f2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    position:relative;
+    width:390px;
+}
+
+.convite{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(0,0,0,.2);
+}
+
+#avatar{
+    position:absolute;
+
+    width:170px;
+
+    right:15px;
+    top:190px;
+
+    animation: balancar 2s infinite ease-in-out;
+    transform-origin:center bottom;
+}
+
+@keyframes balancar{
+
+    0%{
+        transform:rotate(-2deg);
+    }
+
+    50%{
+        transform:rotate(2deg);
+    }
+
+    100%{
+        transform:rotate(-2deg);
+    }
+
+}
+
+#btnFalar{
+
+    position:absolute;
+
+    bottom:20px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:#4f88d6;
+
+    color:white;
+
+    border:none;
+
+    padding:14px 25px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
+
+}
