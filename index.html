@@ -4,7 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Marcelinho - 1 Aninho</title>
+
+    <!-- CAPA DO LINK / WHATSAPP -->
+    <meta property="og:title" content="🎂 Marcelinho - 1 Aninho">
+    <meta property="og:description" content="Venha comemorar meu 1º aninho comigo!">
+    <meta property="og:image" content="https://viniciusrochasilva.github.io/FestaMarcelinho/capa-whatsapp.jpg">
+    <meta property="og:url" content="https://viniciusrochasilva.github.io/FestaMarcelinho/">
+    <meta property="og:type" content="website">
+
+    <!-- TWITTER / OUTROS APPS -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="🎂 Marcelinho - 1 Aninho">
+    <meta name="twitter:description" content="Venha comemorar meu 1º aninho comigo!">
+    <meta name="twitter:image" content="https://viniciusrochasilva.github.io/FestaMarcelinho/capa-whatsapp.jpg">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,7 +29,9 @@
 
     <div class="container">
 
-        <img src="convite.png" class="convite">
+        <img src="convite.png" class="convite" alt="Convite Marcelinho 1 Aninho">
+
+        <img src="avatar-marcelinho.png" id="avatar" class="avatar" alt="Marcelinho">
 
         <div id="contador"></div>
 
@@ -25,15 +41,14 @@
 
         <a
             class="confirmar"
-            href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAYAANpUWvtUNDhCTFRQM0RSRlcxNzZXTVlGRlY5R0NCTi4u"
-            target="_blank">
+            href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAYAANpUWvtUNDhCTFRQM0RSRlcxNzZXTVlGRFlY5R0NCTi4u"
+            target="_blank"
+            aria-label="Confirmar presença">
         </a>
 
     </div>
 
-    <audio id="audioConvite">
-        <source src="voz.mp3" type="audio/mpeg">
-    </audio>
+    <audio id="audioConvite" src="voz.mp3"></audio>
 
     <script src="script.js"></script>
 
