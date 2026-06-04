@@ -5,93 +5,72 @@
 }
 
 body{
-    background:#eef5ff;
+    background:#f1f6ff;
     display:flex;
     justify-content:center;
     align-items:center;
     min-height:100vh;
     overflow-x:hidden;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 .container{
-    position:relative;
     width:100%;
     max-width:430px;
+    position:relative;
 }
 
 .convite{
+
     width:100%;
-    display:block;
-}
 
-#avatar{
+    animation: respirar 6s infinite ease-in-out;
 
-    position:absolute;
+    border-radius:20px;
 
-    width:170px;
-
-    right:10px;
-
-    top:210px;
-
-    transform-origin:center bottom;
-
-    animation: respirar 3s infinite ease-in-out;
-}
-
-.falando{
-
-    animation:
-    respirar .8s infinite ease-in-out,
-    balancar .4s infinite alternate;
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
 }
 
 @keyframes respirar{
 
     0%{
-        transform:translateY(0px) scale(1);
+        transform:scale(1);
     }
 
     50%{
-        transform:translateY(-4px) scale(1.02);
+        transform:scale(1.02);
     }
 
     100%{
-        transform:translateY(0px) scale(1);
+        transform:scale(1);
     }
+
 }
 
-@keyframes balancar{
-
-    from{
-        transform:rotate(-2deg);
-    }
-
-    to{
-        transform:rotate(2deg);
-    }
-}
-
-#btnOuvir{
+#ouvir{
 
     position:fixed;
 
-    bottom:20px;
     right:20px;
+    bottom:20px;
+
+    background:#4f8fe8;
+
+    color:white;
 
     border:none;
 
-    border-radius:50px;
-
-    background:#4c8cff;
-
-    color:white;
+    border-radius:40px;
 
     padding:15px 20px;
 
     cursor:pointer;
 
     font-size:16px;
+
+    font-weight:bold;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
 
     z-index:999;
 }
@@ -101,18 +80,21 @@ body{
     position:fixed;
 
     top:20px;
-
     left:50%;
 
     transform:translateX(-50%);
 
     background:white;
 
-    padding:10px 20px;
+    padding:12px 20px;
 
-    border-radius:30px;
+    border-radius:40px;
+
+    font-size:14px;
 
     font-weight:bold;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
 
     z-index:999;
 }
@@ -121,13 +103,51 @@ body{
 
     position:absolute;
 
-    width:290px;
+    bottom:18px;
 
-    height:75px;
+    left:52px;
 
-    left:50px;
+    width:280px;
 
-    bottom:15px;
+    height:78px;
 
-    z-index:50;
+    cursor:pointer;
+
+    background:transparent;
+}
+
+/* CORAÇÕES */
+
+.hearts{
+
+    position:fixed;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+
+    overflow:hidden;
+}
+
+.heart{
+
+    position:absolute;
+
+    font-size:24px;
+
+    animation: subir linear forwards;
+}
+
+@keyframes subir{
+
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-100px);
+        opacity:0;
+    }
 }
