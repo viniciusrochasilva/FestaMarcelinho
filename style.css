@@ -44,7 +44,6 @@ body{
     100%{
         transform:scale(1);
     }
-
 }
 
 #ouvir{
@@ -73,6 +72,12 @@ body{
     box-shadow:0 5px 20px rgba(0,0,0,.2);
 
     z-index:999;
+
+    transition:.3s;
+}
+
+#ouvir:hover{
+    transform:scale(1.05);
 }
 
 #contador{
@@ -136,7 +141,7 @@ body{
 
     font-size:24px;
 
-    animation: subir linear forwards;
+    animation:subir linear forwards;
 }
 
 @keyframes subir{
