@@ -1,8 +1,10 @@
+// =========================
 // CONTAGEM REGRESSIVA
+// =========================
 
 const contador = document.getElementById("contador");
 
-function atualizarContador(){
+function atualizarContador() {
 
     const festa = new Date("2026-07-09T15:00:00");
 
@@ -16,54 +18,34 @@ function atualizarContador(){
         `🎂 Faltam ${dias} dias para minha festa!`;
 }
 
-setInterval(atualizarContador,1000);
+setInterval(atualizarContador, 1000);
 
 atualizarContador();
 
 
-// NARRAÇÃO
+// =========================
+// ÁUDIO MP3
+// =========================
 
-document.getElementById("ouvir")
-.addEventListener("click", ()=>{
+const botaoOuvir = document.getElementById("ouvir");
+const audio = document.getElementById("audioConvite");
 
-    const texto = `
-    Oi, titios, titias e amiguinhos! Tudo bem?
+botaoOuvir.addEventListener("click", () => {
 
-    Eu sou o Marcelinho e estou muito feliz porque estou fazendo um aninho!
+    audio.pause();
 
-    Quero convidar vocês para comemorar esse dia tão especial comigo!
+    audio.currentTime = 0;
 
-    Minha festinha vai ser no dia nove de julho, às três horas da tarde, na Dimi Festa.
-
-    Vai ter muita diversão, brincadeiras e momentos especiais!
-
-    Eu vou ficar muito feliz com a sua presença!
-
-    Não esqueça de clicar no botão aqui embaixo para confirmar que você vem, tá bom?
-
-    Estou esperando todos vocês com muito carinho!
-    `;
-
-    const fala = new SpeechSynthesisUtterance(texto);
-
-    fala.lang = "pt-BR";
-
-    fala.pitch = 2;
-
-    fala.rate = 1.05;
-
-    fala.volume = 1;
-
-    speechSynthesis.cancel();
-
-    speechSynthesis.speak(fala);
+    audio.play();
 
 });
 
 
+// =========================
 // CORAÇÕES
+// =========================
 
-function criarCoracao(){
+function criarCoracao() {
 
     const heart = document.createElement("div");
 
@@ -81,9 +63,9 @@ function criarCoracao(){
 
     document.body.appendChild(heart);
 
-    setTimeout(()=>{
+    setTimeout(() => {
         heart.remove();
-    },8000);
+    }, 8000);
 }
 
-setInterval(criarCoracao,600);
+setInterval(criarCoracao, 600);
