@@ -5,21 +5,22 @@
 const contador = document.getElementById("contador");
 
 function atualizarContador() {
-
     const festa = new Date("2026-07-09T15:00:00");
-
     const agora = new Date();
 
     const diferenca = festa - agora;
 
-    const dias = Math.floor(diferenca / 1000 / 60 / 60 / 24);
+    if (diferenca <= 0) {
+        contador.innerHTML = "🎉 Hoje é minha festa!";
+        return;
+    }
 
-    contador.innerHTML =
-        `🎂 Faltam ${dias} dias para minha festa!`;
+    const dias = Math.ceil(diferenca / 1000 / 60 / 60 / 24);
+
+    contador.innerHTML = `🎂 Faltam ${dias} dias para minha festa!`;
 }
 
 setInterval(atualizarContador, 1000);
-
 atualizarContador();
 
 
@@ -31,13 +32,16 @@ const botaoOuvir = document.getElementById("ouvir");
 const audio = document.getElementById("audioConvite");
 
 botaoOuvir.addEventListener("click", () => {
-
     audio.pause();
-
     audio.currentTime = 0;
 
     audio.play();
 
+    botaoOuvir.innerHTML = "🔊 Tocando...";
+});
+
+audio.addEventListener("ended", () => {
+    botaoOuvir.innerHTML = "🎙️ Ouvir Convite";
 });
 
 
@@ -46,20 +50,14 @@ botaoOuvir.addEventListener("click", () => {
 // =========================
 
 function criarCoracao() {
-
     const heart = document.createElement("div");
 
     heart.classList.add("heart");
-
     heart.innerHTML = "💙";
 
     heart.style.left = Math.random() * 100 + "%";
-
-    heart.style.fontSize =
-        (20 + Math.random() * 25) + "px";
-
-    heart.style.animationDuration =
-        (4 + Math.random() * 4) + "s";
+    heart.style.fontSize = (20 + Math.random() * 25) + "px";
+    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
 
     document.body.appendChild(heart);
 
