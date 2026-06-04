@@ -4,7 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Marcelinho - 1 Aninho</title>
+
+    <!-- CAPA DO WHATSAPP / FACEBOOK -->
+    <meta property="og:title" content="🎂 Marcelinho - 1 Aninho">
+    <meta property="og:description" content="Venha comemorar comigo meu 1º aninho! Clique para abrir o convite.">
+    <meta property="og:image" content="https://SEU-USUARIO.github.io/SEU-REPOSITORIO/capa-whatsapp.png">
+    <meta property="og:image:secure_url" content="https://SEU-USUARIO.github.io/SEU-REPOSITORIO/capa-whatsapp.png">
+    <meta property="og:url" content="https://SEU-USUARIO.github.io/SEU-REPOSITORIO/">
+    <meta property="og:type" content="website">
+
+    <!-- TAMANHO RECOMENDADO DA IMAGEM -->
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- TWITTER / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="🎂 Marcelinho - 1 Aninho">
+    <meta name="twitter:description" content="Venha comemorar comigo meu 1º aninho!">
+    <meta name="twitter:image" content="https://SEU-USUARIO.github.io/SEU-REPOSITORIO/capa-whatsapp.png">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,24 +34,26 @@
 
     <div class="container">
 
-        <img src="convite.png" class="convite">
+        <img src="convite.png" class="convite" alt="Convite Marcelinho 1 Aninho">
 
         <div id="contador"></div>
 
-        <button id="ouvir">
+        <button id="ouvir" type="button">
             🎙️ Ouvir Convite
         </button>
 
         <a
             class="confirmar"
             href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAYAANpUWvtUNDhCTFRQM0RSRlcxNzZXTVlGRlY5R0NCTi4u"
-            target="_blank">
+            target="_blank"
+            aria-label="Confirmar presença">
         </a>
 
     </div>
 
-    <audio id="audioConvite">
+    <audio id="audioConvite" preload="auto">
         <source src="voz.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
     </audio>
 
     <script src="script.js"></script>
