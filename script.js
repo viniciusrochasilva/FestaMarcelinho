@@ -1,9 +1,30 @@
-const avatar = document.getElementById("avatar");
-const btnFalar = document.getElementById("btnFalar");
+// CONTAGEM REGRESSIVA
 
-btnFalar.addEventListener("click", () => {
+const contador = document.getElementById("contador");
 
-    avatar.classList.add("falando");
+function atualizarContador(){
+
+    const festa = new Date("2026-07-09T15:00:00");
+
+    const agora = new Date();
+
+    const diferenca = festa - agora;
+
+    const dias = Math.floor(diferenca / 1000 / 60 / 60 / 24);
+
+    contador.innerHTML =
+        `🎂 Faltam ${dias} dias para minha festa!`;
+}
+
+setInterval(atualizarContador,1000);
+
+atualizarContador();
+
+
+// NARRAÇÃO
+
+document.getElementById("ouvir")
+.addEventListener("click", ()=>{
 
     const texto = `
     Oi, titios, titias e amiguinhos! Tudo bem?
@@ -27,9 +48,42 @@ btnFalar.addEventListener("click", () => {
 
     fala.lang = "pt-BR";
 
-    fala.rate = 1.1;
     fala.pitch = 2;
 
-    window.speechSynthesis.speak(fala);
+    fala.rate = 1.05;
+
+    fala.volume = 1;
+
+    speechSynthesis.cancel();
+
+    speechSynthesis.speak(fala);
 
 });
+
+
+// CORAÇÕES
+
+function criarCoracao(){
+
+    const heart = document.createElement("div");
+
+    heart.classList.add("heart");
+
+    heart.innerHTML = "💙";
+
+    heart.style.left = Math.random() * 100 + "%";
+
+    heart.style.fontSize =
+        (20 + Math.random() * 25) + "px";
+
+    heart.style.animationDuration =
+        (4 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },8000);
+}
+
+setInterval(criarCoracao,600);
